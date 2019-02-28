@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="DoctorView" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar layoutY="-1.0" prefHeight="5.0" prefWidth="600.0">
+      <menus>
+        <Menu text="选项">
+          <MenuItem text="病人列表" onAction="#on_menu_Patient_clicked" />
+          <MenuItem text="收入列表" onAction="#on_menu_Income_clicked" />
+          <MenuItem text="退出系统" onAction="#on_menu_Exit_clicked" />
+        </Menu>
+      </menus>
+    </MenuBar>
+    <Label fx:id="ModeLabel" layoutX="245.0" layoutY="36.0" prefHeight="28.0" prefWidth="124.0" textFill="#5c0a41">
+      <font>
+        <Font name="Arial" size="24.0" />
+      </font>
+    </Label>
+    <Label fx:id="LabelBegin" text="开始日期:" Visible="false" layoutX="25.0" layoutY="83.0" />
+    <DatePicker fx:id="BeginDatePicker" Editable="false" Visible="false" layoutX="83.0" layoutY="80.0" />
+    <Label fx:id="LabelEnd" text="截止日期:" Visible="false" layoutX="310.0" layoutY="83.0" />
+    <DatePicker fx:id="EndDatePicker" Editable="false" Visible="false" layoutX="368.0" layoutY="80.0" />
+    <TableView fx:id="PatientTable" Editable="false" Visible="false" layoutX="24.0" layoutY="120.0" prefHeight="270.0" prefWidth="552.0">
+      <columns>
+        <TableColumn fx:id="ghbhCol" text="挂号编号" prefWidth="110" />
+        <TableColumn fx:id="brmcCol" text="病人名称" prefWidth="110" />
+        <TableColumn fx:id="rqsjCol" text="日期时间" prefWidth="220" />
+        <TableColumn fx:id="hzlbCol" text="号种类别" prefWidth="110" />
+      </columns>
+    </TableView>
+    <TableView fx:id="IncomeTable" Editable="false" Visible="false" layoutX="24.0" layoutY="120.0" prefHeight="270.0" prefWidth="552.0">
+      <columns>
+        <TableColumn fx:id="ksmcCol" text="科室名称" prefWidth="91" />
+        <TableColumn fx:id="ysbhCol" text="医生编号" prefWidth="93" />
+        <TableColumn fx:id="ysmcCol" text="医生名称" prefWidth="91" />
+        <TableColumn fx:id="hzlcCol" text="号种类别" prefWidth="91" />
+        <TableColumn fx:id="ghrcCol" text="挂号人次" prefWidth="91" />
+        <TableColumn fx:id="srhjCol" text="收入合计" prefWidth="93" />
+      </columns>
+    </TableView>
+  </children>
+</AnchorPane>

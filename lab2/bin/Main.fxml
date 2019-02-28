@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>  
+<?import javafx.scene.control.*?>  
+<?import javafx.scene.layout.*?>  
+<?import javafx.scene.text.*?>  
+
+<GridPane fx:controller="Control"
+    xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">  
+  
+    <padding>  
+        <Insets top="25" right="25" bottom="10" left="25" />  
+    </padding>  
+
+    <Label text="用户编号:" GridPane.columnIndex="0"  
+        GridPane.rowIndex="0" />  
+  
+    <TextField fx:id="User" GridPane.columnIndex="1" GridPane.rowIndex="0" />  
+  
+    <Label text="登录口令:" GridPane.columnIndex="0"  
+        GridPane.rowIndex="1" />
+  
+    <PasswordField fx:id="Password" GridPane.columnIndex="1"  
+        GridPane.rowIndex="1" />  
+
+    <HBox spacing="10" alignment="bottom_left" GridPane.columnIndex="0"  
+        GridPane.rowIndex="3">  
+        <fx:define>
+            <ToggleGroup fx:id="group"/>
+        </fx:define>
+        <RadioButton fx:id="Doctor_sel" text="医生" selected="true" ToggleGroup="$group" />
+        <RadioButton fx:id="Patient_sel" text="病人" ToggleGroup="$group" />
+    </HBox>  
+  
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1"  
+        GridPane.rowIndex="3">  
+        <Button text="登录" onAction="#on_btn_Login_clicked" />  
+        <Button text="退出" onAction="#on_btn_Exit_clicked" />  
+    </HBox>   
+</GridPane> 
